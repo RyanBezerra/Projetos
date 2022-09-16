@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Banco de Dados</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+    <body class="table-dark">
+        <header></header>
+        <main>
+            <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Data</th>
+                </tr>
+            </thead>
+                <tbody>
+                    <h1 class="table-dark">Banco de Dados</h1>
+                <tr>
+                   <th scope="row">1</th>
+                   <td>Conservador</td>
+                   <td>Lucas</td>
+                   <td>R$20.000</td>
+                   <td>15/06/2013</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Moderado</td>
+                    <td>Pedro</td>
+                    <td>R$23.000</td>
+                    <td>11/06/2013</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Agressivo</td>
+                    <td>João</td>
+                    <td>R$30.000</td>
+                    <td>15/03/2013</td>
+                </tr>
+                    <a href="http://127.0.0.1:8000/CriarBanco/"><button type="button" class="btn btn-secondary">Adicionar novo perfil</button></a>
+            </tbody>
+          </table>
+    </main>
+
+    <footer></footer>
+
+</body>
+</html>

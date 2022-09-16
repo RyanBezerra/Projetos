@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Dados</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+    <body class="table-dark">
+    <header></header>
+
+    <main>
+        <h1 class="table-dark">Editor do Banco de Dados</h1>
+        <form method="POST">
+        <input class="form-control" type="text" placeholder="Nome">
+        <input class="form-control" type="text" placeholder="Valor">
+        <select class="form-control">
+            <option>Conservador</option>
+            <option>Moderado</option>
+            <option>Agressivo</option>
+          </select>
+          <a href="http://127.0.0.1:8000/Banco/"><button type="button" class="btn btn-secondary">Adicionar novo perfil</button></a>
+        </form>
+    </main>
+
+    <footer></footer>
+    </body>
+</html>
