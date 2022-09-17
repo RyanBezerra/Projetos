@@ -4,11 +4,6 @@ from django.db import models
 
 class Dados(models.Model):
 
-    STATUS = (
-        ('doing', 'Doing'),
-        ('done', 'Done'),
-    )
-
     Nome = models.CharField(max_length=255)
     Valor = models.CharField(max_length=255)
 

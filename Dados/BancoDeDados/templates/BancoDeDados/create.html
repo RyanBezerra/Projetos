@@ -1,0 +1,24 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Dados</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+    <body class="table-dark">
+    <header></header>
+
+    <main>
+        <h1 class="table-dark">Editor do Banco de Dados</h1>
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Salvar">
+        <br><form action="{% url 'home' %}"><input type="submit" value="Voltar" /></form>
+        </form>
+    </main>
+    </body>
+</html>

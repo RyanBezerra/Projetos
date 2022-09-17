@@ -1,13 +1,44 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-#from .forms import DadosForm
+from django.shortcuts import render, redirect
 from .models import Dados
+from .forms import DadosForm
 
 # Create your views here.
+def home(request):
+    dados = Dados.objects.all()
+    data={}
+    data['dados'] = dados
+    return render(request, 'BancoDeDados/home.html', data)
 
-def Banco(request):
-    return render(request, template_name='BancoDeDados/Banco.html')
+def create(request):
+    form = DadosForm(request.POST or None)
+    data={}
+    data['form'] = form
+    if form.is_valid():
+        form.save()
+        return redirect('home')
 
-def CriarBanco(request):
-    #form = DadosForm()
-    return render(request, template_name='BancoDeDados/CriarBanco.html')
+    return render(request, 'BancoDeDados/create.html', data)
+
+def leiturabanco(request, pk):
+    dado = Dados.objects.get(pk=pk)
+    data={}
+    data['dado'] = dado
+
+    return render(request, 'BancoDeDados/dado.html',)
+
+def update(request, pk):
+    dado = Dados.objects.get(pk=pk)
+    form = DadosForm(request.POST or None, instance=dado)
+    data = {}
+    data['dado'] = dado
+    data['form'] = form
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+    
+    return render(request, 'BancoDeDados/update.html', data)
+    
+def delete(request, pk):
+    dado = Dados.objects.get(pk=pk)
+    dado.delete()
+    return redirect('home')
